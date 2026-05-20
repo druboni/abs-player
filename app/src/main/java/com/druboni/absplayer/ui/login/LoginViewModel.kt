@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 data class LoginUiState(
-    val serverUrl: String = "",
+    val serverUrl: String = "https://earmarked.the-phylactery.com",
     val username: String = "",
     val password: String = "",
     val isLoading: Boolean = false,

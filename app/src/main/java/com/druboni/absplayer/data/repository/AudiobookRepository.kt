@@ -20,6 +20,9 @@ class AudiobookRepository @Inject constructor(
     private val localProgressDao: LocalProgressDao
 ) {
     suspend fun login(serverUrl: String, username: String, password: String): Result<UserResponse> {
+        // Save the server URL BEFORE making the API call so the dynamic URL
+        // interceptor can replace the placeholder host on the login request itself.
+        prefs.saveServerUrl(serverUrl)
         return runCatching {
             val response = api.login(LoginRequest(username, password))
             prefs.saveCredentials(serverUrl, response.user.token, response.user.id, response.user.username)

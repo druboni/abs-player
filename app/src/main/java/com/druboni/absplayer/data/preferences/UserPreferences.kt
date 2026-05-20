@@ -28,6 +28,12 @@ class UserPreferences @Inject constructor(
     val userId: Flow<String?> = context.dataStore.data.map { it[userIdKey] }
     val username: Flow<String?> = context.dataStore.data.map { it[usernameKey] }
 
+    suspend fun saveServerUrl(serverUrl: String) {
+        context.dataStore.edit { prefs ->
+            prefs[serverUrlKey] = serverUrl
+        }
+    }
+
     suspend fun saveCredentials(serverUrl: String, token: String, userId: String, username: String) {
         context.dataStore.edit { prefs ->
             prefs[serverUrlKey] = serverUrl

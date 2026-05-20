@@ -32,7 +32,7 @@ fun LoginScreen(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("ABS Player", style = MaterialTheme.typography.headlineLarge)
+            Text("Brian test audiobook player", style = MaterialTheme.typography.headlineLarge)
             Spacer(modifier = Modifier.height(8.dp))
             Text("AudiobookShelf Client", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Spacer(modifier = Modifier.height(40.dp))
